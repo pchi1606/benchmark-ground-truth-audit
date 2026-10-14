@@ -1,0 +1,21 @@
+# Build and runtime artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.log
+
+# PDF build intermediates (paper.pdf itself is shipped)
+*.aux
+*.bbl
+*.blg
+*.out
+*.toc
+*.synctex.gz
+
+# OS and editor noise
+.DS_Store
+*~
+*.swp
+
+# Private: held-out optima hashes never ship in the public package
+test_commitments.json
