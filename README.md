@@ -1,10 +1,10 @@
-# G11: The Ground Truth Is Wrong — Reproduction Package
+# G11: A Third of the Ground Truth Is Wrong — Reproduction Package
 
 Author: Prabhu Rangaraju. License: MIT (see `LICENSE`).
 
 This package lets any reader re-verify the headline numbers of the
-benchmark-audit paper "The Ground Truth Is Wrong: A Solver-Based Audit of
-Ground Truths in Optimization-Modeling Benchmarks."
+benchmark-audit paper "A Third of the Ground Truth Is Wrong: A 127-Instance
+Audit of Optimization-Modeling Benchmarks."
 
 ## What it contains
 
