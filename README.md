@@ -45,3 +45,30 @@ and solving with SCIP) is documented in the paper's method section and the
 release's PROTOCOL. Re-running the full solver audit from scratch is
 described in the paper; this package verifies the reported numbers from
 the shipped release, which is the checkable artifact.
+
+## Source data: provenance, license, and terms
+
+Per-suite pins (each record in the release JSONL also carries its own
+`source` field with the same pin):
+
+| Suite | Source (pinned) | License / terms basis |
+|---|---|---|
+| NL4Opt (40 instances) | github.com/LLM4OR/LLM4OR @ 75962df5ddf531906fda76f8708c658114e63c0e (`static/clean_benchmarks/NL4Opt`), accessed 2026-10-14 | Upstream terms of the NL4Opt competition data (NeurIPS 2022 Competitions Track) as distributed in the LLM4OR collection; no separate dataset license is stated upstream. Records are redistributed here for audit reproducibility; the original work must be cited. |
+| MAMO (35 instances) | github.com/FreedomIntelligence/Mamo @ 2c91069dee5c1e4db4b899eb176ec987d0251bb3 | Released by its authors under CC-BY-SA-4.0 (see CITATION.md). The derivative records here are shared under the same share-alike terms. |
+| IndustryOR (34 instances) | huggingface.co/datasets/CardinalOperations/IndustryOR @ b00811923f167cdf4ae1677c33cd61d4eea78f48, accessed 2026-10-14 | Upstream terms of the IndustryOR dataset as published with the ORLM work (Operations Research 73(6), 2025); no separate dataset license is stated upstream. Records are redistributed here for audit reproducibility; the original work must be cited. |
+| ComplexOR | Extension audit only (Xiao et al., ICLR 2024); NOT part of the cleaned release | Not redistributed in this package. |
+
+The MIT license in this package covers only the new material (audit
+annotations, release tooling, verifier, manuscript), never the
+upstream problem texts or shipped optima.
+
+## Split hygiene
+
+The verdict taxonomy was frozen from the pilot before the main audit
+began (PROTOCOL.md §3) and was not revised by the audit outcomes; the
+20-instance NL4Opt pilot did not change it. Solver configuration and
+tolerances were fixed for the whole audit and were NOT tuned on the
+audited instances. The 109 release records split 77 dev / 32 test
+(seed 42, stratified by family); the test optima were sha256-committed
+and withheld before the test-phase audit ran, and every record carries
+a canary GUID.
